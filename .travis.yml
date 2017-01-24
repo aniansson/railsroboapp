@@ -15,6 +15,6 @@ deploy:
   app:
     deployment: railsroboapp
   on:
-    repo: Aniansson/railsapp
+    repo: Aniansson/railsroboapp
   run:
   - bundle exec rake db:migrate
