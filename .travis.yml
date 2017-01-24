@@ -1,19 +1,20 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.3.1
+- 2.3.1
 before_script:
-  - bundle exec rails db:create --all
-  - bundle exec rails db:migrate
+- bundle exec rails db:create --all
+- bundle exec rails db:migrate
 services:
-  - postgresql
-# deploy:
-#   provider: heroku
-#   api_key:
-#     secure:
-#   app:
-#     develop:
-#   on:
-#     repo:
-#   run:
-#     - bundle exec rake db:migrate
+- postgresql
+deploy:
+  provider: heroku
+  api_key:
+    secure:
+      aIYppP94RYmSRG1IsOi9uMTsjYcVRdeFmgalLUvHw9fb9cddknJAm1QAbevD8gvC00TJ3Gffx2s+wy8apFv5AqnPO/0OOTjaD0jU7yl0mM5r20JMghwQ0CTlw0Je4lHhb3/6dbkAQ7OxOdGg3WZ57Va2Dg/s2nDPf5aIZP8VX6JoFE8qOFw/oWHt7RetpIRBMn4rttNYcwcAjUtvXKo1mqtJzhZQPx5AqmSrAJ7beqQrgRgWzYyr0XTzz+XVTxAMLwuBR+FGVG4PHISKq7fHhNvbJQT5BztQBir7HFq6Wy/DEFYWLIFjP+VblnW3u7q35m4J1SWCp+A3JULprpO5zrYK3aExPUCzlK4cKZtawpwI8mZmd80TIZ3cBvncoius+FI2EWW4/O34Za73zMDKUrxutYxHCSEZN+fkvAYsSQtELb/cIh26KrAFikoNWstyZJ3ePJmcvjAvStVF2CIjtK2pA/WNSGG4T+e5UvL1gW/9opNOp3ssddDJqU/UvJ/eiW2GJ06lt6rEvskwwMiBnP3+LWb+SQ8kjl90h3VQwRvsWMewthF/2rfoHB/gmxk4QvZ/3ACQIoCzNu9gxJzbhj0YnKo9nVsR2bVXA47ut1zvZW9uBv+qWpsR8eZu6lYaic2mo3s5M3vFAxUsL+Mfs9M7X79slAjsqBI6fxnnOhI=
+  app:
+    deployment: railsroboapp
+  on:
+    repo: Aniansson/railsapp
+  run:
+  - bundle exec rake db:migrate
